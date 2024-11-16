@@ -22,10 +22,10 @@ function Form(props){
 
     }
     return (
-        <div>
+        <div className="insert-box">
             <form>
-                <input name="title" value={note.title} onChange={handleChange} placeholder="Note title ..."></input>
-                <input name="content" value={note.content} onChange={handleChange} placeholder="Note description ..."></input>
+                <input className="input-box" name="title" value={note.title} onChange={handleChange} placeholder="Note title ..."></input>
+                <input className="input-box" name="content" value={note.content} onChange={handleChange} placeholder="Note description ..."></input>
                 <button onClick={AddNote}>Add Note</button>
             </form>
         </div>

@@ -22,7 +22,6 @@ function App(){
     
     return (<div>
     <Header />
-    <h1>Hello There !!!</h1>
     <Form onAdd={CreateNote} />
     {notes.map((noteItem,index) => {
         return (
