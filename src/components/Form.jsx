@@ -16,8 +16,8 @@ function Form(){
     return (
         <div>
             <form>
-                <input placeholder="Note title ..."></input>
-                <input placeholder="Note description ..."></input>
+                <input name="title" value={note.title} onChange={handleChange} placeholder="Note title ..."></input>
+                <input name="content" value={note.content} onChange={handleChange} placeholder="Note description ..."></input>
                 <button>Add Note</button>
             </form>
         </div>
