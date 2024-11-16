@@ -27,6 +27,9 @@ function App(){
     {notes.map((noteItem) => {
         return (
           <Note
+            key={index}
+            id={index}
+            deleteNote={onDelete}
             title={noteItem.title}
             content={noteItem.content}
           />
