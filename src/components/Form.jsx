@@ -1,6 +1,6 @@
 import React,{useState} from "react";
 
-function Form(){
+function Form(props){
 
     const [note,setNote]=useState({title: "",
         content: ""});
@@ -12,6 +12,14 @@ function Form(){
                
             
         });
+    }
+
+    function AddNote(e){
+        props.onAdd(note);
+        setNote({title: "",
+            content: ""});
+        e.preventDefault();
+
     }
     return (
         <div>
