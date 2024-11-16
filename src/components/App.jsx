@@ -6,7 +6,8 @@ import Note from "./Note";
 
 function App(){
     
-    return (<div><Header />
+    return (<div>
+    <Header />
     <h1>Hello There !!!</h1>
     <Form />
     <Note />

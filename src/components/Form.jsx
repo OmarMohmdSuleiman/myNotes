@@ -1,6 +1,18 @@
-import React from "react";
+import React,{useState} from "react";
 
 function Form(){
+
+    const [note,setNote]=useState({title: "",
+        content: ""});
+
+    function handleChange(e){
+        const { name, value } = e.target;
+        setNote(prevNote=> {
+            return { ...prevNote,[name]: value};
+               
+            
+        });
+    }
     return (
         <div>
             <form>
