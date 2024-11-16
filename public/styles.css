@@ -1,37 +1,40 @@
 @import url('https://fonts.googleapis.com/css?family=Exo:400,700');
 
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
-body{
+html, body {
     font-family: 'Exo', sans-serif;
-}
-
-
-
-
-
-.area {
+    height: 100%; /* Ensure the body and html elements fill the viewport */
     background: #000000; /* Black */
     background: -webkit-linear-gradient(to left, #000000, #333333); /* Black to Dark Grey (WebKit) */
     background: linear-gradient(to left, #000000, #333333); /* Black to Dark Grey (Standard) */
-    width: 100%;
-    height: 100vh;
+    background-attachment: fixed; /* Fix background while scrolling */
+    background-size: cover; /* Ensure background covers the full viewport */
+    background-repeat: no-repeat;
 }
 
-.circles{
-    position: absolute;
-    top: 0;
+.area {
+    width: 100%;
+    min-height: 100vh; /* Make sure this section covers at least the height of the viewport */
+    padding-bottom: 20px; /* Add bottom padding if necessary */
+    position: relative; /* Make this container a reference for positioning the circles */
+}
+
+.circles {
+    position: fixed; /* Fix the circles to the viewport */
+    bottom: 0; /* Always start from the bottom */
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 100%; /* Make sure the circles fill the height of the viewport */
+    pointer-events: none; /* Prevent circles from blocking interactions */
     overflow: hidden;
 }
 
-.circles li{
+.circles li {
     position: absolute;
     display: block;
     list-style: none;
@@ -39,19 +42,17 @@ body{
     height: 20px;
     background: yellow;
     animation: animate 25s linear infinite;
-    bottom: -150px;
-    
+    bottom: -150px; /* Ensure they start below the screen */
 }
 
-.circles li:nth-child(1){
+.circles li:nth-child(1) {
     left: 25%;
     width: 80px;
     height: 80px;
     animation-delay: 0s;
 }
 
-
-.circles li:nth-child(2){
+.circles li:nth-child(2) {
     left: 10%;
     width: 20px;
     height: 20px;
@@ -59,14 +60,14 @@ body{
     animation-duration: 12s;
 }
 
-.circles li:nth-child(3){
+.circles li:nth-child(3) {
     left: 70%;
     width: 20px;
     height: 20px;
     animation-delay: 4s;
 }
 
-.circles li:nth-child(4){
+.circles li:nth-child(4) {
     left: 40%;
     width: 60px;
     height: 60px;
@@ -74,28 +75,28 @@ body{
     animation-duration: 18s;
 }
 
-.circles li:nth-child(5){
+.circles li:nth-child(5) {
     left: 65%;
     width: 20px;
     height: 20px;
     animation-delay: 0s;
 }
 
-.circles li:nth-child(6){
+.circles li:nth-child(6) {
     left: 75%;
     width: 110px;
     height: 110px;
     animation-delay: 3s;
 }
 
-.circles li:nth-child(7){
+.circles li:nth-child(7) {
     left: 35%;
     width: 150px;
     height: 150px;
     animation-delay: 7s;
 }
 
-.circles li:nth-child(8){
+.circles li:nth-child(8) {
     left: 50%;
     width: 25px;
     height: 25px;
@@ -103,7 +104,7 @@ body{
     animation-duration: 45s;
 }
 
-.circles li:nth-child(9){
+.circles li:nth-child(9) {
     left: 20%;
     width: 15px;
     height: 15px;
@@ -111,14 +112,15 @@ body{
     animation-duration: 35s;
 }
 
-.circles li:nth-child(10){
+.circles li:nth-child(10) {
     left: 85%;
     width: 150px;
     height: 150px;
     animation-delay: 0s;
     animation-duration: 11s;
 }
-#root{
+
+#root {
     color: white;
     position: absolute;
     z-index: 11;
@@ -127,22 +129,99 @@ body{
     justify-content: center;
     align-items: center;
     width: 100%;
-    }
+}
 
+#header {
+    margin-bottom: 20px;
+    text-align: center;
+}
 
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.input-box {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid yellow;
+    outline: none;
+    background: transparent;
+}
+
+#add {
+    background-color: yellow;
+    height: 30px;
+    width: 50%;
+    border: none;
+    font-weight: bolder;
+    border-radius: 30px;
+    transition: 0.3s;
+}
+
+#add:hover {
+    font-size: 16px;
+    color: white;
+    background-color: transparent;
+}
+
+#footer {
+    margin-top: 20px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: yellow;
+    color: black;
+    text-align: center;
+}
+
+h5 {
+    padding-top: 3px;
+}
+
+.note {
+    padding-left: 10px;
+    border: yellow 1px solid;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-top: 10px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+
+}
+
+.delete {
+    background-color: yellow;
+    height: 30px;
+    width: 50%;
+    border: none;
+    font-weight: bolder;
+    border-radius: 30px;
+    transition: 0.3s;
+}
+
+.delete:hover {
+    font-size: 16px;
+    color: white;
+    background-color: transparent;
+}
 
 @keyframes animate {
-
-    0%{
+    0% {
         transform: translateY(0) rotate(0deg);
         opacity: 1;
         border-radius: 0;
     }
 
-    100%{
+    100% {
         transform: translateY(-1000px) rotate(720deg);
         opacity: 0;
         border-radius: 50%;
     }
-
 }

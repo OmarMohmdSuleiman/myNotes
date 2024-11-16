@@ -26,7 +26,7 @@ function Form(props){
             <form>
                 <input className="input-box" name="title" value={note.title} onChange={handleChange} placeholder="Note title ..."></input>
                 <input className="input-box" name="content" value={note.content} onChange={handleChange} placeholder="Note description ..."></input>
-                <button onClick={AddNote}>Add Note</button>
+                <button id="add" onClick={AddNote}>Add Note</button>
             </form>
         </div>
     );
