@@ -17,7 +17,14 @@ function App(){
     <Header />
     <h1>Hello There !!!</h1>
     <Form onAdd={CreateNote} />
-    <Note />
+    {notes.map((noteItem) => {
+        return (
+          <Note
+            title={noteItem.title}
+            content={noteItem.content}
+          />
+        );
+      })}
     <Footer />
     </div>);
 }
