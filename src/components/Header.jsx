@@ -1,9 +1,16 @@
 import React from "react";
 
-function Header(){
+// Header component function
+function Header() {
     return (
-        <div id="header"><h1 id="h1">This is HEADER</h1>
-        <h3>Enter the Note:</h3></div>
+      // A div element with the id "header" to style the header
+      <div id="header">
+        <h1 id="h1">Welcome to my MYNOTES</h1>  
+        <br />
+        <h3>Enter Note/s :</h3>  
+      </div>
     );
-}
-export default Header;
+  }
+  
+  // Export the Header component for use in other parts of the application
+  export default Header;

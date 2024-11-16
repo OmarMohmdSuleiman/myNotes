@@ -1,55 +1,62 @@
+/* Importing the 'Exo' font family from Google Fonts */
 @import url('https://fonts.googleapis.com/css?family=Exo:400,700');
 
+/* Global reset: Remove padding, margin, and set box-sizing to border-box for all elements */
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
+/* Set base font-family and apply background for the html and body */
 html, body {
-    font-family: 'Exo', sans-serif;
+    font-family: 'Exo', sans-serif; /* Use Exo font family */
     height: 100%; /* Ensure the body and html elements fill the viewport */
-    background: #000000; /* Black */
+    background: #000000; /* Black background color */
     background: -webkit-linear-gradient(to left, #000000, #333333); /* Black to Dark Grey (WebKit) */
     background: linear-gradient(to left, #000000, #333333); /* Black to Dark Grey (Standard) */
     background-attachment: fixed; /* Fix background while scrolling */
     background-size: cover; /* Ensure background covers the full viewport */
-    background-repeat: no-repeat;
+    background-repeat: no-repeat; /* Prevent background repetition */
 }
 
+/* Main content area styling */
 .area {
-    width: 100%;
+    width: 100%; /* Full width */
     min-height: 100vh; /* Make sure this section covers at least the height of the viewport */
     padding-bottom: 20px; /* Add bottom padding if necessary */
     position: relative; /* Make this container a reference for positioning the circles */
 }
 
+/* Circles container: Fixes the circles to the viewport */
 .circles {
     position: fixed; /* Fix the circles to the viewport */
     bottom: 0; /* Always start from the bottom */
     left: 0;
-    width: 100%;
-    height: 100%; /* Make sure the circles fill the height of the viewport */
+    width: 100%; /* Full width */
+    height: 100%; /* Ensure the circles fill the height of the viewport */
     pointer-events: none; /* Prevent circles from blocking interactions */
-    overflow: hidden;
+    overflow: hidden; /* Hide any circles that go beyond the viewport */
 }
 
+/* Styling for each individual circle */
 .circles li {
-    position: absolute;
-    display: block;
-    list-style: none;
-    width: 20px;
+    position: absolute; /* Position circles absolutely within the container */
+    display: block; /* Make circles block-level elements */
+    list-style: none; /* Remove bullet points */
+    width: 20px; /* Set default size for circles */
     height: 20px;
-    background: yellow;
-    animation: animate 25s linear infinite;
+    background: yellow; /* Set circle color */
+    animation: animate 25s linear infinite; /* Animation for the circles' movement */
     bottom: -150px; /* Ensure they start below the screen */
 }
 
+/* Custom styles for individual circles based on their index */
 .circles li:nth-child(1) {
-    left: 25%;
+    left: 25%; /* Position first circle at 25% from the left */
     width: 80px;
     height: 80px;
-    animation-delay: 0s;
+    animation-delay: 0s; /* Delay before animation starts */
 }
 
 .circles li:nth-child(2) {
@@ -57,7 +64,7 @@ html, body {
     width: 20px;
     height: 20px;
     animation-delay: 2s;
-    animation-duration: 12s;
+    animation-duration: 12s; /* Custom animation duration */
 }
 
 .circles li:nth-child(3) {
@@ -67,6 +74,7 @@ html, body {
     animation-delay: 4s;
 }
 
+/* More custom styles for other circles */
 .circles li:nth-child(4) {
     left: 40%;
     width: 60px;
@@ -120,40 +128,45 @@ html, body {
     animation-duration: 11s;
 }
 
+/* Styling for the root element */
 #root {
-    color: white;
+    color: white; /* White text */
     position: absolute;
-    z-index: 11;
+    z-index: 11; /* Ensure the content appears on top of other elements */
     top: 0;
-    display: flex;
+    display: flex; /* Center the content */
     justify-content: center;
     align-items: center;
-    width: 100%;
+    width: 100%; /* Full width */
 }
 
+/* Header styles */
 #header {
     margin-bottom: 20px;
-    text-align: center;
+    text-align: center; /* Center-align header text */
 }
 
+/* Form container styles */
 form {
-    display: flex;
+    display: flex; /* Flexbox for form layout */
     flex-direction: column;
     gap: 10px;
 }
 
+/* Input field styles */
 .input-box {
-    width: 100%;
+    width: 100%; /* Full width */
     padding: 10px 0;
     font-size: 16px;
-    color: #fff;
+    color: #fff; /* White text */
     margin-bottom: 30px;
     border: none;
-    border-bottom: 1px solid yellow;
+    border-bottom: 1px solid yellow; /* Yellow underline */
     outline: none;
-    background: transparent;
+    background: transparent; /* Transparent background */
 }
 
+/* Add button styles */
 #add {
     background-color: yellow;
     height: 30px;
@@ -161,7 +174,7 @@ form {
     border: none;
     font-weight: bolder;
     border-radius: 30px;
-    transition: 0.3s;
+    transition: 0.3s; /* Smooth transition on hover */
 }
 
 #add:hover {
@@ -170,32 +183,40 @@ form {
     background-color: transparent;
 }
 
+/* Footer styles */
 #footer {
     margin-top: 20px;
-    position: fixed;
+    position: fixed; /* Fix the footer at the bottom */
     left: 0;
     bottom: 0;
     width: 100%;
-    background-color: yellow;
-    color: black;
-    text-align: center;
+    background-color: yellow; /* Yellow background */
+    color: black; /* Black text */
+    text-align: center; /* Center-align footer text */
 }
 
+/* Footer span styles */
+span {
+    font-size: 16px;
+}
+
+/* Header styling */
 h5 {
     padding-top: 3px;
 }
 
+/* Note box styling */
 .note {
     padding-left: 10px;
-    border: yellow 1px solid;
+    border: yellow 1px solid; /* Yellow border */
     padding-top: 15px;
     padding-bottom: 15px;
     margin-top: 10px;
     border-radius: 12px;
-    margin-bottom: 30px;
-
+    margin-bottom: 30px; /* Add bottom margin */
 }
 
+/* Delete button styles */
 .delete {
     background-color: yellow;
     height: 30px;
@@ -212,16 +233,17 @@ h5 {
     background-color: transparent;
 }
 
+/* Keyframes for animating the circles */
 @keyframes animate {
     0% {
-        transform: translateY(0) rotate(0deg);
+        transform: translateY(0) rotate(0deg); /* Initial position */
         opacity: 1;
-        border-radius: 0;
+        border-radius: 0; /* Square shape at the start */
     }
 
     100% {
-        transform: translateY(-1000px) rotate(720deg);
-        opacity: 0;
-        border-radius: 50%;
+        transform: translateY(-1000px) rotate(720deg); /* Move circles upwards */
+        opacity: 0; /* Fade out the circles */
+        border-radius: 50%; /* Make circles round */
     }
 }
