@@ -1,9 +1,11 @@
 import React from "react";
 
-function Note(){
+function Note(props){
+
+    
     return (<div>
-        <h2>Note title</h2>
-        <p>Note description</p>
+        <h2>{props.title}</h2>
+        <p>{props.content}</p>
         <button>Delete Note</button>
     </div>);
 }
